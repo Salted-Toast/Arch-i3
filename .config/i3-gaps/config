@@ -1,5 +1,5 @@
 #==================================================#
-#    _ _____        ____             __ _	         #
+#    _ _____        ____             __ _	   #
 #   (_)___ /       / ___|___  _ __  / _(_) __ _	   #
 #   | | |_ \ _____| |   / _ \| '_ \| |_| |/ _` |   #
 #   | |___) |_____| |__| (_) | | | |  _| | (_| |   #
@@ -151,6 +151,7 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 
 # Force Applications to open in specific workspaces
 for_window [class="firefox"] move to workspace $ws2
+for_window [class="code-oss"] move to workspace $ws3
 for_window [class="Spotify"] move to workspace $ws10
 
 # reload the configuration file
@@ -160,7 +161,7 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
-# resize window (you can also use the mouse for that)
+# resize window you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
 
@@ -197,14 +198,15 @@ bindsym $mod+r mode "resize"
 exec setxkbmap gb &
 
 # i3-gaps
-for_window [class="^.*"] border pixel 0
+for_window [class="^.*"] border pixel 2
 gaps inner 5
 gaps outer 5
 bindsym $mod+z gaps outer current plus 5
 bindsym $mod+Shift+z gaps outer current minus 5
 
-# Opens Terminal
-exec i3-sensible-terminal
+# Startup Apps
+exec alacritty
+exec firefox
 
 # Runs Polybar
 exec polybar MorrisonPolybar &
