@@ -1,2 +1,2 @@
-# Arch-i3
-This is my i3-gaps setup on arch linux
+# Arch i3-gaps 
+        :)
